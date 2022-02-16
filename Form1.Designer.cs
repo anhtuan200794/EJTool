@@ -33,12 +33,13 @@ namespace EJTool
             this.tbEJPath = new System.Windows.Forms.TextBox();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.BankName = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(2, 15);
+            this.label1.Location = new System.Drawing.Point(7, 77);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 13);
             this.label1.TabIndex = 0;
@@ -47,16 +48,16 @@ namespace EJTool
             // 
             // tbEJPath
             // 
-            this.tbEJPath.Location = new System.Drawing.Point(83, 12);
+            this.tbEJPath.Location = new System.Drawing.Point(88, 74);
             this.tbEJPath.Name = "tbEJPath";
-            this.tbEJPath.Size = new System.Drawing.Size(316, 20);
+            this.tbEJPath.Size = new System.Drawing.Size(181, 20);
             this.tbEJPath.TabIndex = 1;
             // 
             // btnBrowse
             // 
-            this.btnBrowse.Location = new System.Drawing.Point(420, 6);
+            this.btnBrowse.Location = new System.Drawing.Point(287, 68);
             this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(97, 31);
+            this.btnBrowse.Size = new System.Drawing.Size(96, 31);
             this.btnBrowse.TabIndex = 2;
             this.btnBrowse.Text = "Chọn Thư Mục";
             this.btnBrowse.UseVisualStyleBackColor = true;
@@ -64,7 +65,7 @@ namespace EJTool
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(186, 59);
+            this.button2.Location = new System.Drawing.Point(389, 68);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(122, 30);
             this.button2.TabIndex = 3;
@@ -72,11 +73,28 @@ namespace EJTool
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // BankName
+            // 
+            this.BankName.FormattingEnabled = true;
+            this.BankName.Items.AddRange(new object[] {
+            "VBARD",
+            "BAB",
+            "SHB",
+            "MB",
+            "TCB",
+            "COB"});
+            this.BankName.Location = new System.Drawing.Point(1, 1);
+            this.BankName.Name = "BankName";
+            this.BankName.Size = new System.Drawing.Size(68, 21);
+            this.BankName.TabIndex = 4;
+            this.BankName.SelectedIndexChanged += new System.EventHandler(this.BankName_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(523, 113);
+            this.Controls.Add(this.BankName);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.tbEJPath);
@@ -94,6 +112,7 @@ namespace EJTool
         private System.Windows.Forms.TextBox tbEJPath;
         private System.Windows.Forms.Button btnBrowse;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox BankName;
     }
 }
 

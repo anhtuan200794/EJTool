@@ -6,6 +6,13 @@ using System.Threading.Tasks;
 
 namespace EJTool
 {
+    public enum TransactionResult
+    {
+        FAILED = -1,
+        SUCCESS = 0,
+        RETRACTED,
+        REJECTED,
+    }
     public enum TransactionType
     {
         UNKNOWN = -1,
@@ -15,13 +22,6 @@ namespace EJTool
         MINI,
         PINCHANGE,
         FUNDTRANSFER
-    }
-    public enum CashTransactionType
-    {
-        UNKNOWN = -1,
-        SUCCESS = 0,
-        RETRACTED,
-        REJECTED
     }
     class Transaction
     {
@@ -33,9 +33,10 @@ namespace EJTool
         public TransactionType eTranType {get;set;}
         public bool bIsTranSuccess { get; set; }
         public string strCardNum { get; set; }
-        public string strDipsRequest { get; set; }
-        public CashTransactionType eCashTranType { get; set; }
-        public int[] arCashDip { get; set;}
+        public string strDispRequest { get; set; }
+        public TransactionResult eTranResult { get; set; }
+        public int[] arCashDisp { get; set;}
+        public int[] arNumOfNote { get; set; }
         public string strRRN { get; set; }
         public void ResetAllData()
         {
@@ -47,11 +48,11 @@ namespace EJTool
             eTranType = TransactionType.UNKNOWN;
             bIsTranSuccess = false;
             strCardNum = "";
-            strDipsRequest = "";
-            eCashTranType = CashTransactionType.UNKNOWN;
-            arCashDip = new int[] { 0,0,0,0};
+            strDispRequest = "";
+            eTranResult = TransactionResult.FAILED;
+            arCashDisp = new int[] { 0,0,0,0};
+            arNumOfNote = new int[] { 0, 0, 0, 0 };
             strRRN = "";
-
         }
     }
 }

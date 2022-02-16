@@ -42,5 +42,10 @@ namespace EJTool
                 tbEJPath.Text = folderBrowserDialog1.SelectedPath;
             }
         }
+
+        private void BankName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
