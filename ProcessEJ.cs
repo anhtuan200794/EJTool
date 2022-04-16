@@ -13,6 +13,7 @@ namespace EJTool
     {
         const string csTxStart = "-> TRANSACTION START";
         const string csTxEnd = "<- TRANSACTION END";
+        const string csVBATxEnd = "***THANK YOU***";
         const string csCardNum = "TRACK 2 DATA:";
         const string csCashRq = "CASH REQUEST:";
         const string csOpCode = "TRANSACTION REQUEST";
@@ -59,7 +60,10 @@ namespace EJTool
                         //line = stReader.ReadLine();
                         index++;
                         //Console.WriteLine(index + ":" + line);
-
+                        if (index == 1203)
+                        {
+                            Console.WriteLine(index + ":" + line);
+                        }
                         if (String.IsNullOrEmpty(line))
                         {
                             continue;
@@ -68,14 +72,13 @@ namespace EJTool
                         else if (line.Contains(csTxStart))
                         {
                             tran = new Transaction();
-                            tran.ResetAllData();
                             tran.strStartTime = line.Substring(0, 8);
                             continue;
                         }
                         #endregion
 
                         #region TX end
-                        else if (line.Contains(csTxEnd))
+                        else if (line.Contains(csTxEnd)&& (tran.strStartTime!=""))
                         {
                             tran.strEndTime = line.Substring(0, 8);
                             //if (tran.eTranType == TransactionType.DISPENSE)
@@ -89,6 +92,15 @@ namespace EJTool
                             transactions.Add(tran);
                             continue;
                         }
+                        else if ((line.Contains(csVBATxEnd) && (tran.eTranType == TransactionType.DEPOSIT)))
+                        {
+                            line = stReader.ReadLine(); // read next line to get the time
+                            index++;
+                            tran.strEndTime = line.Substring(0, 8);
+                            tran.strDate = strDate;
+                            transactions.Add(tran);
+                            continue;
+                        }    
                         #endregion
 
                         #region Get CardNum

@@ -26,9 +26,19 @@ namespace EJTool
         private void button2_Click(object sender, EventArgs e)
         {
             // Open file
-            string[] fileArray = Directory.GetFiles(tbEJPath.Text, "*.jrn");
-            ProcessEJ processEJ = new ProcessEJ();
-            processEJ.ProcessEJFiles(fileArray);
+            string[] fileArray = Directory.GetFiles(tbEJPath.Text);
+            string sBankName = BankName.GetItemText(BankName.SelectedItem);
+            if(sBankName == "BAB-Opteva")
+            {
+                ProcessOptevaEJ processEJ = new ProcessOptevaEJ();
+                processEJ.ProcessOptevaEJFile(fileArray);
+            }
+            else
+            {
+                ProcessEJ processEJ = new ProcessEJ();
+                processEJ.ProcessEJFiles(fileArray);
+            }
+            
             MessageBox.Show("Done!");
         }
 
@@ -44,6 +54,11 @@ namespace EJTool
         }
 
         private void BankName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

@@ -38,6 +38,7 @@ namespace EJTool
         public int[] arCashDisp { get; set;}
         public int[] arNumOfNote { get; set; }
         public string strRRN { get; set; }
+        public string strRC { get; set; }
         public void ResetAllData()
         {
             strDate = "";
@@ -53,6 +54,24 @@ namespace EJTool
             arCashDisp = new int[] { 0,0,0,0};
             arNumOfNote = new int[] { 0, 0, 0, 0 };
             strRRN = "";
+            strRC = "";
+        }
+        public Transaction()
+        {
+            strDate = "";
+            strStartTime = "";
+            strEndTime = "";
+            strOpCode = "";
+            strAmount = "";
+            eTranType = TransactionType.UNKNOWN;
+            bIsTranSuccess = false;
+            strCardNum = "";
+            strDispRequest = "";
+            eTranResult = TransactionResult.FAILED;
+            arCashDisp = new int[] { 0, 0, 0, 0 };
+            arNumOfNote = new int[] { 0, 0, 0, 0 };
+            strRRN = "";
+            strRC = "";
         }
     }
 }

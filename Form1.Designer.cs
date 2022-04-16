@@ -34,6 +34,7 @@ namespace EJTool
             this.btnBrowse = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.BankName = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -48,9 +49,9 @@ namespace EJTool
             // 
             // tbEJPath
             // 
-            this.tbEJPath.Location = new System.Drawing.Point(88, 74);
+            this.tbEJPath.Location = new System.Drawing.Point(112, 74);
             this.tbEJPath.Name = "tbEJPath";
-            this.tbEJPath.Size = new System.Drawing.Size(181, 20);
+            this.tbEJPath.Size = new System.Drawing.Size(157, 20);
             this.tbEJPath.TabIndex = 1;
             // 
             // btnBrowse
@@ -59,7 +60,7 @@ namespace EJTool
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(96, 31);
             this.btnBrowse.TabIndex = 2;
-            this.btnBrowse.Text = "Chọn Thư Mục";
+            this.btnBrowse.Text = "Browse";
             this.btnBrowse.UseVisualStyleBackColor = true;
             this.btnBrowse.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -77,23 +78,30 @@ namespace EJTool
             // 
             this.BankName.FormattingEnabled = true;
             this.BankName.Items.AddRange(new object[] {
-            "VBARD",
-            "BAB",
-            "SHB",
-            "MB",
-            "TCB",
-            "COB"});
-            this.BankName.Location = new System.Drawing.Point(1, 1);
+            "BAB-Opteva",
+            "VBARD-DN400V"});
+            this.BankName.Location = new System.Drawing.Point(112, 12);
             this.BankName.Name = "BankName";
             this.BankName.Size = new System.Drawing.Size(68, 21);
             this.BankName.TabIndex = 4;
             this.BankName.SelectedIndexChanged += new System.EventHandler(this.BankName_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(8, 14);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(76, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Bank-Machine";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(523, 113);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.BankName);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnBrowse);
@@ -113,6 +121,7 @@ namespace EJTool
         private System.Windows.Forms.Button btnBrowse;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox BankName;
+        private System.Windows.Forms.Label label2;
     }
 }
 

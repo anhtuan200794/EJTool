@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ProcessEJ.cs" />
+    <Compile Include="ProcessOptevaEJ.cs" />
     <Compile Include="Transaction.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
