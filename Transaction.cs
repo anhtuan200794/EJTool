@@ -12,6 +12,7 @@ namespace EJTool
         SUCCESS = 0,
         RETRACTED,
         REJECTED,
+        CASHTAKEN,
     }
     public enum TransactionType
     {

@@ -33,6 +33,11 @@ namespace EJTool
                 ProcessOptevaEJ processEJ = new ProcessOptevaEJ();
                 processEJ.ProcessOptevaEJFile(fileArray);
             }
+            else if (sBankName == "SHB-CS280")
+            {
+                ProcessProcashATMEJ processProcashATMEJ = new ProcessProcashATMEJ();
+                processProcashATMEJ.ProcessProcashATMEJFiles(fileArray);
+            }
             else
             {
                 ProcessEJ processEJ = new ProcessEJ();

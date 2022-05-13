@@ -79,10 +79,11 @@ namespace EJTool
             this.BankName.FormattingEnabled = true;
             this.BankName.Items.AddRange(new object[] {
             "BAB-Opteva",
-            "VBARD-DN400V"});
+            "VBA-DN400V",
+            "SHB-CS280"});
             this.BankName.Location = new System.Drawing.Point(112, 12);
             this.BankName.Name = "BankName";
-            this.BankName.Size = new System.Drawing.Size(68, 21);
+            this.BankName.Size = new System.Drawing.Size(157, 21);
             this.BankName.TabIndex = 4;
             this.BankName.SelectedIndexChanged += new System.EventHandler(this.BankName_SelectedIndexChanged);
             // 
